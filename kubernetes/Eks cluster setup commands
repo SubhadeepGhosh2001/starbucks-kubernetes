@@ -1,7 +1,7 @@
 (a) Create EKS Cluster (without node group)
 
 eksctl create cluster \
-  --name=Cloudaseem \
+  --name=SubhadeepCluster \
   --region=ap-south-1 \
   --zones=ap-south-1a,ap-south-1b \
   --version=1.30 \
@@ -14,13 +14,13 @@ eksctl create cluster \
 
 eksctl utils associate-iam-oidc-provider \
   --region ap-south-1 \
-  --cluster Cloudaseem \
+  --cluster SubhadeepCluster \
   --approve
 
 c. node group
 
 eksctl create nodegroup \
-  --cluster=Cloudaseem \
+  --cluster=SubhadeepCluster \
   --region=ap-south-1 \
   --name=node2 \
   --node-type=t3.medium \
@@ -29,7 +29,7 @@ eksctl create nodegroup \
   --nodes-max=4 \
   --node-volume-size=20 \
   --ssh-access \
-  --ssh-public-key=starbucks1 \
+  --ssh-public-key=kubernetes_ec2 \
   --managed \
   --asg-access \
   --external-dns-access \
