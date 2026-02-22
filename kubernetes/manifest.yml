@@ -4,7 +4,7 @@ kind: Deployment
 metadata:
   name: starbucks-deployment
 spec:
-  replicas: 1
+  replicas: 2
   strategy:
     type: RollingUpdate
   selector:
@@ -32,5 +32,6 @@ spec:
   ports:
   - port: 80
     targetPort: 3000
+
 
 
