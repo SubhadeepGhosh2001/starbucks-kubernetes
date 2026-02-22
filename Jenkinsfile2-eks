@@ -68,7 +68,7 @@ pipeline{
                     aws sts get-caller-identity
 
                     echo "Configuring kubectl for EKS cluster..."
-                    aws eks update-kubeconfig --region ap-south-1 --name Cloudaseem
+                    aws eks update-kubeconfig --region ap-south-1 --name SubhadeepCluster
 
                     echo "Verifying kubeconfig..."
                     kubectl config view
